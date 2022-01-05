@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Dis</title>
+        <style>
+            input{
+                width: 30px;
+                height: 40px;
+                border: 2px solid #000;
+                font: 1.5em Sans-Serif;
+            }
+            body{
+                text-align: center;
+            }
+            span{
+                font: 1.5em Sans-Serif;
+            }
+            h1{
+                font-family: Sans-Serif;
+            }
+        </style>
+    </head>
+    <body>
+        <input type="text"  id="a"><span>x</span><sup>2</sup> +
+        <input type="text"  id="b"><span>x</span>+
+        <input type="text"  id="c">
+        <button onclick="dis()"><span>=</span></button>
+         <span>0</span>
+        <h1 id="result"></h1>
+
+        <script>
+            
+            let a = document.getElementById("a")
+            let b = document.getElementById("b")
+            let c = document.getElementById("c")
+            
+            function dis(){ 
+            let av = +a.value
+            let bv = +b.value
+            let cv = +c.value
+            let discriminant = bv * bv - 4 * av * cv
+            let root1 = (-bv + Math.sqrt(discriminant)) / (2 * av)
+            let root2 = (-bv - Math.sqrt(discriminant)) / (2 * av)
+            let root3 = -bv / (2 * av)
+            
+            
+            if (discriminant > 0) {
+               
+                
+                result.innerHTML =`The roots of quadratic equation are ${root1} and ${root2}`
+            }
+            else if (discriminant == 0) {
+                result.innerHTML =`The root of quadratic equation is ${root3}`
+            }
+            else if (discriminant<0){
+                result.innerHTML =`Kok Yoxdur`
+            }
+                        
+        }
+        </script>
+    </body>
+</html>
